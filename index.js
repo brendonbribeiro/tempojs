@@ -1,11 +1,10 @@
 'use strict';
 
-/**
- * Adds commas to a number
- * @param {number} number
- * @param {string} locale
- * @return {string}
- */
-module.exports = function(number, locale) {
-    return number.toLocaleString(locale);
+const SmartTimerState = require("./src/state.js");
+const SmartTimerUtils = require("./src/utils.js");
+const SmartTimerTime = require("./src/time.js");
+const SmartTimer = require("./src/timer.js");
+
+module.exports = {SmartTimer:SmartTimer,
+SmartTimerTime: SmartTimerTime
 };
