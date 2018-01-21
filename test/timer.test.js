@@ -1,10 +1,11 @@
-var sinon = require('sinon');
-var expect = require('chai').expect;
-const Tempo = require("../lib/timer.js");
-const TempoTime = require("../lib/time.js");
+const sinon = require('sinon');
+const expect = require('chai').expect;
 
-var onIntervalSpy = sinon.spy();
-var onStartSpy = sinon.spy();
+const TempoTime = require("../lib/time.js");
+const Tempo = require("../lib/timer.js");
+
+const onIntervalSpy = sinon.spy();
+const onStartSpy = sinon.spy();
 
 describe('timer tests', function() {
 
