@@ -17,6 +17,36 @@ describe('timer tests', function() {
     this.clock.restore();
   });
 
+  it('Tempo should be defined', function() {
+    expect(Tempo).to.not.be.undefined;
+  });
+
+  it('timer should be defined', function() {
+    var timer = new Tempo({});
+    expect(timer).to.not.be.undefined;
+  });
+
+  it('settings should be defined', function() {
+    var timer = new Tempo({
+      interval: new TempoTime({
+        seconds: 1
+      })
+    });
+
+    expect(timer.settings).to.not.be.undefined;
+  });
+
+  it('settings.startTime should be equal to _currentSmartTime', function() {
+    var timer = new Tempo({
+      startTime: new TempoTime({
+        seconds: 1
+      })
+    });
+
+    expect(timer.settings.startTime).to.not.be.undefined;
+    expect(timer._currentSmartTime).to.equal(timer.settings.startTime);
+  });
+
   it('a timer test', function() {
     var stopTime = 0;
     var timer = new Tempo({

@@ -20,7 +20,21 @@ describe('tempo utils tests', function() {
     expect(TempoUtils.hoursToMilliseconds(1)).to.equal(3600000);
   });
 
-  // it('tempo time to ms 1', function() {
-  //   expect(TempoUtils.hoursToMilliseconds(1)).to.equal(3600000);
-  // });
+  it('120543 ms to TempoTime', function() {
+    const time = TempoUtils.msToSmartTime(120543);
+
+    expect(time.hours).to.equal(0);
+    expect(time.minutes).to.equal(2);
+    expect(time.seconds).to.equal(0);
+    expect(time.milliseconds).to.equal(543);
+  });
+
+  it('354058001 ms to TempoTime', function() {
+    const time = TempoUtils.msToSmartTime(35405800);
+    
+    expect(time.hours).to.equal(9);
+    expect(time.minutes).to.equal(50);
+    expect(time.seconds).to.equal(5);
+    expect(time.milliseconds).to.equal(800);
+  });
 });
