@@ -1,6 +1,6 @@
 {
   "name": "tempojs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Smart javascript timer",
   "main": "./lib/timer.js",
   "scripts": {
