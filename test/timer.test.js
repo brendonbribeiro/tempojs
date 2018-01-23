@@ -127,15 +127,45 @@ describe('timer tests', function() {
   });
 
   it('start() should change state to STARTED', function() {
+    var timer = new Tempo({});
+    timer.start();
+    expect(timer.state).to.equal(TempoState.STARTED);
+  });
+
+  it('end() should change state to ENDED', function() {
+    var timer = new Tempo({});
+    timer.end();
+    expect(timer.state).to.equal(TempoState.ENDED);
+  });
+
+  it('pause() should change state to PAUSED', function() {
+    var timer = new Tempo({});
+    timer.pause();
+    expect(timer.state).to.equal(TempoState.PAUSED);
+  });
+
+  it('stop() should change state to STOPED', function() {
+    var timer = new Tempo({});
+    timer.stop();
+    expect(timer.state).to.equal(TempoState.STOPED);
+  });
+
+  it('onStart should be called', function() {
+    var onStartTime;
     var timer = new Tempo({
-      startTime: {
-        seconds: 1,
-        milliseconds: 200
-			}
+      onStart: onStartSpy
     });
 
     timer.start();
-    expect(timer.state).to.equal(TempoState.STARTED);
+    expect(onStartSpy.called).to.be.true;
+  });
+
+  it('_intervalInstance should be defined', function() {
+    var onStartTime;
+    var timer = new Tempo({});
+
+    timer.start();
+    expect(timer._intervalInstance).to.not.be.undefined;
   });
 
   it('a timer test', function() {
