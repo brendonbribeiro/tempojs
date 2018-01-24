@@ -3,4 +3,62 @@
 [![npm version](https://badge.fury.io/js/tempojs.svg)](https://badge.fury.io/js/tempojs)
 
 # tempojs
-Smart javascript timer
+tempojs is a JavaScript library for building smart timers
+
+* **Precise:** You will not get broken values like 999ms when you were waiting for 1s
+* **Configurable:** You have several options to create your timer
+
+## Installation
+
+tempojs is available on [npm](https://www.npmjs.com/package/tempojs)
+
+```shell
+npm install tempojs
+```
+
+## Usage
+If you're using `node`, first `require` tempojs
+```js
+const Tempo = require("tempojs");
+```
+
+That's all you need to get it working. To test if everything is fine, execute this small example
+```js
+let timer = new Tempo({
+  onInterval:(time) => {
+    console.log(time.toString());
+  }
+});
+
+timer.start();
+```
+
+## Time Object
+tempojs uses a more **human representation** of time as an object. This object will be used at some points, named `timeObj`, and it looks like this:
+
+```js
+{
+  milliseconds: 1,
+  seconds: 1,
+  minutes: 1,
+  hours: 1
+}
+```
+
+## Settings
+You can configure your timer, by passing a object as first argument when creating a new `Tempo` instance
+```js
+let timer = new Tempo(settings);
+```
+
+### interval
+* Represents the **delay** between timer ticks.
+* Default value: `{ seconds: 1 }`
+
+### startTime
+* Represents the time that your timer will start.
+* Default value: empty `timeObj`
+
+### endTime
+* Represents the time that your timer will end.
+* Default value: empty `timeObj`
