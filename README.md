@@ -50,7 +50,7 @@ tempojs uses a more **human representation** of time as an object. This object w
 }
 ```
 
-### Empty
+### empty
 The term empty `timeObj` refers to `{}`, or:
 ```js
 {
