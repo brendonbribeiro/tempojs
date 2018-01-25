@@ -16,6 +16,11 @@ tempojs is available on [npm](https://www.npmjs.com/package/tempojs)
 npm install tempojs
 ```
 
+And you may get it from [rawgit](https://cdn.rawgit.com/brendonbarreto/tempojs/master/dist/tempo.min.js)
+```html
+<script type="text/javascript" src="https://cdn.rawgit.com/brendonbarreto/tempojs/master/dist/tempo.min.js"></script>
+```
+
 ## Usage
 If you're using `node`, first `require` tempojs
 ```js
