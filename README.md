@@ -50,6 +50,18 @@ tempojs uses a more **human representation** of time as an object. This object w
 }
 ```
 
+### Empty
+The term empty `timeObj` refers to `{}`, or:
+```js
+{
+  milliseconds: 0,
+  seconds: 0,
+  minutes: 0,
+  hours: 0
+}
+
+```
+
 ## Settings
 You can configure your timer, by passing a object as first argument when creating a new `Tempo` instance
 ```js
@@ -59,6 +71,21 @@ let timer = new Tempo(settings);
 ### interval
 * Represents the **delay** between timer ticks.
 * Default value: `{ seconds: 1 }`
+```js
+let timer = new Tempo({
+  interval:{
+    minutes: 1,
+    seconds: 30
+  }
+});
+```
+On this example timer will call `onInterval` every 1 minute and 30 seconds after started. It will also, search for `onIntervals` and `onSpecificTimes`.
+
+### decreasing
+* Determines if the timer will increase or decrease
+* Default value: `false`
+
+If set to `true`, timer will end at endTime or empty `timeObj`
 
 ### startTime
 * Represents the time that your timer will start.
