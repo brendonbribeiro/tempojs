@@ -59,8 +59,10 @@ The term empty `timeObj` refers to `{}`, or:
   minutes: 0,
   hours: 0
 }
-
 ```
+
+### toString()
+converts a `timeObj` into string (hh:mm:ss:fff). `{ hours: 2, minutes: 30, seconds: 45, milliseconds: 500 }` will return **02:30:45:500**
 
 ## Settings
 You can configure your timer, by passing a object as first argument when creating a new `Tempo` instance
@@ -85,7 +87,7 @@ On this example timer will call `onInterval` every 1 minute and 30 seconds after
 * Determines if the timer will increase or decrease
 * Default value: `false`
 
-If set to `true`, timer will end at endTime or empty `timeObj`
+If set to `true`, timer will end at `endTime` or empty `timeObj`
 
 ### startTime
 * Represents the time that your timer will start.
