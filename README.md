@@ -96,3 +96,11 @@ If set to `true`, timer will end at `endTime` or empty `timeObj`
 ### endTime
 * Represents the time that your timer will end.
 * Default value: empty `timeObj`
+
+## Timer functions
+| Function       | Description |
+| :------------- | :--------- |
+| `start`        | starts the timer on `startTime` or last pause time, and call `onStart` |
+| `pause`        | pause the timer and call `onPause`   |
+| `stop`         | stop the timer, current time return to `startTime`, and call `onStop`   |
+| `end`          | current time return to `startTime`, and call `onEnd`. The difference between stop and end, is that end is called automatically when timer reaches `endTime` (or empty `timeObj` if `decreasing = true`) |
